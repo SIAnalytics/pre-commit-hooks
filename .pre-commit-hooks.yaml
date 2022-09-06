@@ -1,0 +1,20 @@
+# a git repo containing pre-commit plugins must contain a
+# .pre-commit-hooks.yaml file that tells pre-commit which hooks are provided
+# more details at https://pre-commit.com/#creating-new-hooks
+
+- id: say-hello
+  name: say hello
+  description: a template to show how to implement a pre-commit hook
+  language: python
+  entry: say-hello
+  require_serial: true
+  pass_filenames: false
+  args: ['SI-Analytics']
+
+- id: check-copyright
+  name: check copyright
+  description: check whether the code contains copyright
+  language: python
+  entry: check-copyright
+  require_serial: true
+  pass_filenames: false
