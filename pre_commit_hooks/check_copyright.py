@@ -5,7 +5,7 @@ import os
 import os.path as osp
 from typing import List
 
-HEADER = 'Copyright (c) SI-Analytics. All rights reserved.\n'
+HEADER = 'Copyright (c) SI Analytics. All rights reserved.\n'
 
 HEADER_KEYWORDS = {'Copyright', 'License'}
 
@@ -13,7 +13,8 @@ HEADER_KEYWORDS = {'Copyright', 'License'}
 def has_copyright(lines: List[str]) -> bool:
     for line in lines:
         if not HEADER_KEYWORDS.isdisjoint(set(line.split(' '))):
-            return True
+            if 'SI Analytics' in line:
+                return True
     return False
 
 
